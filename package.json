@@ -1,0 +1,25 @@
+{
+  "name": "password-strength-calculator",
+  "version": "1.0.0",
+  "description": "Package to calculate the strength of a given password",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shra1dhar/password-strength.git"
+  },
+  "keywords": [
+    "password-strength",
+    "password",
+    "password-strength-calculator",
+    "password-strength-meter"
+  ],
+  "author": "Shravan Dhar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shra1dhar/password-strength/issues"
+  },
+  "homepage": "https://github.com/shra1dhar/password-strength#readme"
+}
