@@ -2,8 +2,10 @@
   "name": "password-strength-calculator",
   "version": "1.0.0",
   "description": "Package to calculate the strength of a given password",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib",
   "scripts": {
+    "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/shra1dhar/password-strength/issues"
   },
-  "homepage": "https://github.com/shra1dhar/password-strength#readme"
+  "homepage": "https://github.com/shra1dhar/password-strength#readme",
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
 }

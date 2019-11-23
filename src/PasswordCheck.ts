@@ -1,4 +1,5 @@
 import {DICTIONARY_WORDLIST, COMMONLY_USED_WORDLIST} from './wordlist';
+
 // Returns true if string has atleast one uppercase letter
 function hasUpperCase(str) {
   let regEx = /[A-Z]/;
@@ -18,12 +19,12 @@ function hasNumber(str) {
 }
 
 // Returns true is string has atleast the provided min length
-function isMinLength(str, len) {
+function hasMinLength(str, len) {
   return (str.length >= len);
 }
 
 // Returns true is string has atmost the provided max length
-function isMaxLength(str, len) {
+function hasMaxLength(str, len) {
   return (str.length <= len);
 }
 
