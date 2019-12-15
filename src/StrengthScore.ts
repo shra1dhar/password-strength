@@ -1,41 +1,37 @@
-import {
-  hasUpperCase,
-  hasLowerCase,
-  hasNumber,
-  isMinLength,
-  isMaxLength,
-  hasDictionaryWord,
-  hasCommonPassword
- } from './PasswordCheck';
+import { hasCommonPassword, hasDictionaryWord, hasLowerCase, hasMinLength, hasNumber, hasUpperCase } from './PasswordCheck';
 
-function StrengthScore(inpString, params = []) {
+export function StrengthScore(inpString: string, params: string[] = []): number {
   let score = 0;
   const total = params.length;
 
   try {
     for (let validator of params) {
       switch (validator) {
-        case uppercase:
+        case 'uppercase':
           if (hasUpperCase(inpString))
             score++;
-          // break;
-        case lowercase:
+        // break;
+        case 'lowercase':
           if (hasLowerCase(inpString))
             score++;
-          // break;
-        case number:
+        // break;
+        case 'number':
           if (hasNumber(inpString))
             score++;
-          // break;
-        case minLength:
+        // break;
+        case 'minLength':
           if (hasMinLength(inpString))
             score++;
-          // break;
-        case dictionary:
+        // break;
+        case 'minLength':
+          if (hasMinLength(inpString))
+            score++;
+        // break;
+        case 'dictionary':
           if (hasDictionaryWord(inpString))
             score++;
-          // break
-        case common:
+        // break
+        case 'common':
           if (hasCommonPassword(inpString))
             score++;
         default:
@@ -44,9 +40,9 @@ function StrengthScore(inpString, params = []) {
     }
   } catch (error) {
     console.log(error);
-    return null;
+    return 0;
   }
   return score;
 }
 
-export default StrengthScore;
+// export default StrengthScore;

@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "Package to calculate the strength of a given password",
   "main": "lib/index.js",
-  "types": "lib",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc -p .",
+    "check-types": "tsc",
+    "dev": "webpack-dev-server --open --config webpack.config.dev.js",
+    "watch": "babel --watch src ---out-dir lib --extensions '.ts,.tsx'",
+    "build": "babel src --out-dir lib --extensions '.ts,.tsx'",
+    "tsc": "tsc",
+    "bundle": "webpack",
+    "prepublish": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +31,20 @@
   },
   "homepage": "https://github.com/shra1dhar/password-strength#readme",
   "devDependencies": {
-    "typescript": "^3.7.2"
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-typescript": "^7.7.4",
+    "babel-loader": "^8.0.4",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.17"
   }
 }

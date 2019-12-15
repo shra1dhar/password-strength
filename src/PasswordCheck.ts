@@ -1,41 +1,41 @@
-import {DICTIONARY_WORDLIST, COMMONLY_USED_WORDLIST} from './wordlist';
+import { COMMONLY_USED_WORDLIST, DICTIONARY_WORDLIST } from './wordlist';
 
 // Returns true if string has atleast one uppercase letter
-function hasUpperCase(str) {
+export function hasUpperCase(str: string): boolean {
   let regEx = /[A-Z]/;
   return regEx.test(str);
 }
 
 // Returns true if string has atleast one lowercase letter
-function hasLowerCase(str) {
+export function hasLowerCase(str: string): boolean {
   let regEx = /[a-z]/;
   return regEx.test(str);
 }
 
 // Returns true if string has atleast one number
-function hasNumber(str) {
+export function hasNumber(str: string): boolean {
   let regEx = /\d/;
   return regEx.test(str);
 }
 
 // Returns true is string has atleast the provided min length
-function hasMinLength(str, len) {
+export function hasMinLength(str: string, len: number = 6): boolean {
   return (str.length >= len);
 }
 
 // Returns true is string has atmost the provided max length
-function hasMaxLength(str, len) {
+export function hasMaxLength(str: string, len: number = 6): boolean {
   return (str.length <= len);
 }
 
 // return true if it contains atleast a single dictionary word
-function hasDictionaryWord(str) {
+export function hasDictionaryWord(str: string): boolean {
   const wordSet = new Set(DICTIONARY_WORDLIST);
   return wordSet.has(str);
 }
 
 // return true if it contains atleast a single commonly used password
-function hasCommonPassword(str) {
+export function hasCommonPassword(str: string): boolean {
   const wordSet = new Set(COMMONLY_USED_WORDLIST);
   return wordSet.has(str);
 }
