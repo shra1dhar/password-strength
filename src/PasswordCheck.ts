@@ -31,11 +31,11 @@ export function hasMaxLength(str: string, len: number = 6): boolean {
 // return true if it contains atleast a single dictionary word
 export function hasDictionaryWord(str: string): boolean {
   const wordSet = new Set(DICTIONARY_WORDLIST);
-  return wordSet.has(str);
+  return wordSet.has(str.toLowerCase());
 }
 
 // return true if it contains atleast a single commonly used password
 export function hasCommonPassword(str: string): boolean {
   const wordSet = new Set(COMMONLY_USED_WORDLIST);
-  return wordSet.has(str);
+  return wordSet.has(str.toLowerCase());
 }

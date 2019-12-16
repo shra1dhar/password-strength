@@ -1,9 +1,8 @@
 {
-  "name": "password-strength-calculator",
+  "name": "psc-password-strength-calculator",
   "version": "1.0.0",
   "description": "Package to calculate the strength of a given password",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "scripts": {
     "check-types": "tsc",
     "dev": "webpack-dev-server --open --config webpack.config.dev.js",
@@ -19,10 +18,11 @@
     "url": "git+https://github.com/shra1dhar/password-strength.git"
   },
   "keywords": [
-    "password-strength",
     "password",
+    "password-strength",
+    "password-strength-meter",
     "password-strength-calculator",
-    "password-strength-meter"
+    "password-strength-estimation"
   ],
   "author": "Shravan Dhar",
   "license": "MIT",

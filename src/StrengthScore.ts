@@ -1,48 +1,59 @@
 import { hasCommonPassword, hasDictionaryWord, hasLowerCase, hasMinLength, hasNumber, hasUpperCase } from './PasswordCheck';
+type ValidationType = 'minLength' | 'maxLength' | 'lowercase' | 'uppercase' | 'number' | 'dictionary' | 'common';
 
-export function StrengthScore(inpString: string, params: string[] = []): number {
-  let score = 0;
-  const total = params.length;
+export function StrengthScore(inpString: string, params: ValidationType[] = []): any {
+  let score: number = 0;
+  let total: number = params.length;
 
   try {
     for (let validator of params) {
       switch (validator) {
         case 'uppercase':
-          if (hasUpperCase(inpString))
-            score++;
-        // break;
+          if (hasUpperCase(inpString)) {
+            score += 1;
+          }
+        break;
         case 'lowercase':
-          if (hasLowerCase(inpString))
-            score++;
-        // break;
+          if (hasLowerCase(inpString)) {
+            score += 1;
+          }
+        break;
         case 'number':
-          if (hasNumber(inpString))
-            score++;
-        // break;
+          if (hasNumber(inpString)) {
+            score += 1;
+          }
+          total += 1;
+        break;
         case 'minLength':
-          if (hasMinLength(inpString))
-            score++;
-        // break;
+          if (hasMinLength(inpString)) {
+            score += 1;
+          }
+        break;
         case 'minLength':
-          if (hasMinLength(inpString))
-            score++;
-        // break;
+          if (hasMinLength(inpString)) {
+            score += 1;
+          }
+        break;
         case 'dictionary':
-          if (hasDictionaryWord(inpString))
-            score++;
-        // break
+          if (hasDictionaryWord(inpString)) {
+            score += 1;
+          }
+        break;
         case 'common':
-          if (hasCommonPassword(inpString))
-            score++;
+          if (hasCommonPassword(inpString)) {
+            score += 1;
+          }
         default:
-          throw new Error('Validator could not be parsed properly. Check Props');
+          break;
       }
     }
   } catch (error) {
     console.log(error);
     return 0;
   }
-  return score;
-}
 
-// export default StrengthScore;
+  console.log('score', score);
+  console.log('total', total);
+  if (total === 0) return 0;
+  return ((score/total) * 100).toFixed(2);
+}
