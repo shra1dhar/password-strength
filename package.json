@@ -1,8 +1,8 @@
 {
   "name": "psc-password-strength-calculator",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Package to calculate the strength of a given password",
-  "main": "lib/index.js",
+  "main": "list/index.js",
   "scripts": {
     "check-types": "tsc",
     "dev": "webpack-dev-server --open --config webpack.config.dev.js",

@@ -13,7 +13,7 @@
 
 ```js
 // import
-const psc = require(`password-strength-calculator`);
+const psc = require(`psc-password-strength-calculator`);
 
 // psc(inputString, [conditions])
 const score = psc("inputString", ['common', 'number']);

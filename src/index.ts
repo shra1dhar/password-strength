@@ -3,9 +3,8 @@ type ValidationType = 'minLength' | 'maxLength' | 'lowercase' | 'uppercase' | 'n
 
 // "use strict";
 export default module.exports = (inputString: string = "Hello Friend", props: ValidationType[] = []) => {
-  let params:ValidationType[] = [];
-  const score = StrengthScore(inputString, params);
-  console.log("Score is::::>>>>>>>>", score);
+  const score = StrengthScore(inputString, props);
+  console.log(score);
   return score;
 }
 // passwordStrength();`
