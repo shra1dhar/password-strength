@@ -48,12 +48,9 @@ export function StrengthScore(inpString: string, params: ValidationType[] = []):
       }
     }
   } catch (error) {
-    console.log(error);
     return 0;
   }
 
-  console.log('score', score);
-  console.log('total', total);
   if (total === 0) return 0;
   return ((score/total) * 100).toFixed(2);
 }
